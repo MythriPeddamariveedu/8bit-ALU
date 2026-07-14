@@ -1,0 +1,7 @@
+module andf(out,zero,a,b);
+input [7:0]a,b;
+output [7:0]out;
+output zero;
+assign out=a&b;
+assign zero=(out==8'b0);
+endmodule
