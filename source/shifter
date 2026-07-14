@@ -1,0 +1,8 @@
+module shifter(out,zero,a,dir);
+input [7:0]a;
+input dir;          // 0 = shift left, 1 = shift right
+output [7:0]out;
+output zero;
+assign out = dir ? (a>>1) : (a<<1);
+assign zero=(out==8'b0);
+endmodule
