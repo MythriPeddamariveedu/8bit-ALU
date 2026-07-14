@@ -1,0 +1,71 @@
+`timescale 1ns / 1ps
+
+module alu_top_tb;
+
+reg [7:0] a,b;
+reg cin;
+reg [2:0] sel;
+
+wire [7:0] out;
+wire cout,zero;
+
+alu_top DUT(
+    .a(a),
+    .b(b),
+    .cin(cin),
+    .sel(sel),
+    .out(out),
+    .cout(cout),
+    .zero(zero)
+);
+
+initial
+begin
+
+$monitor("Time=%0t SEL=%b A=%d B=%d CIN=%b OUT=%d COUT=%b ZERO=%b",
+          $time,sel,a,b,cin,out,cout,zero);
+
+// Addition
+a=8'd15; b=8'd10; cin=0; sel=3'b000;
+#10;
+
+// Subtraction
+sel=3'b001;
+#10;
+
+// AND
+sel=3'b010;
+#10;
+
+// OR
+sel=3'b011;
+#10;
+
+// XOR
+sel=3'b100;
+#10;
+
+// NOT
+sel=3'b101;
+#10;
+
+// Left Shift
+a=8'b00001111;
+sel=3'b110;
+#10;
+
+// Right Shift
+sel=3'b111;
+#10;
+
+// Zero flag check
+a=8'd0;
+b=8'd0;
+sel=3'b010;
+#10;
+
+$finish;
+
+end
+
+endmodule
