@@ -54,7 +54,7 @@ The ALU was verified using a Verilog testbench. The simulation confirms correct 
 
 ### RTL Schematic
 
-![RTL Schematic](Result/RTL_Schematic-ALU.png)
+![RTL Schematic](Result/RTL%20Schematic.png)
 
 ---
 
