@@ -42,7 +42,7 @@ The design was verified using a self-checking testbench covering **80 test vecto
  
 The ALU takes two 8-bit operands (`A`, `B`), a carry-in (`Cin`), and a 3-bit opcode (`SEL`). Each operation module runs in parallel; the output multiplexer selects the correct result based on `SEL`, and the `COUT`/`ZERO` flags are derived accordingly.
  
-<img src="Result/ALU_Block_Diagram.png" alt="ALU Block Diagram" width="500">
+<img src="Result/ALU_Block_Diagram.png" alt="Block_Diagram" width="500">
  
 ## Project Structure
  
